@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cajero Automático</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            width: 400px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .input-field {
+            margin-bottom: 15px;
+        }
+        .input-field label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .input-field input, .input-field select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        hr {
+            margin: 20px 0;
+            border: 0;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Cajero Automático</h2>
+        <form id="accountForm">
+            <div class="input-field">
+                <label for="accountType">Tipo de Cuenta:</label>
+                <select id="accountType" required>
+                    <option value="">Seleccione un tipo de cuenta</option>
+                    <option value="corriente">Cuenta Corriente</option>
+                    <option value="ahorros">Cuenta de Ahorros</option>
+                </select>
+            </div>
+            <div class="input-field">
+                <label for="accountNumber">Número de Cuenta:</label>
+                <input type="text" id="accountNumber" placeholder="Ingrese su número de cuenta" required>
+            </div>
+            <button class="button" type="submit">Acceder</button>
+        </form>
+        <hr>
+        <div id="accountOptions" style="display: none;">
+            <button class="button" id="checkBalance">Consultar Saldo</button>
+            <button class="button" id="withdraw">Retirar</button>
+            <button class="button" id="deposit">Depositar</button>
+            <button class="button" id="transfer">Transferir</button>
+            <button class="button" id="overdraft" style="display: none;">Sobregiro</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('accountForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const accountType = document.getElementById('accountType').value;
+            document.getElementById('accountOptions').style.display = 'block';
+            if (accountType === 'corriente') {
+                document.getElementById('overdraft').style.display = 'block';
+            } else {
+                document.getElementById('overdraft').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

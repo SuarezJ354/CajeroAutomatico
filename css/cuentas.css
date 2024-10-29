@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 40px;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+h2, h3 {
+    color: #1e3c72;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+.user-info {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border: 2px solid #ddd;
+}
+
+#saldoActual, #numeroCuenta, #titularCuenta, #sobregiroDisponible {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #1e3c72;
+}
+
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.button, #sobregiro {
+    background: #1e3c72;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.button:hover, #sobregiro:hover {
+    background: #2a5298;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.button:active, #sobregiro:active {
+    transform: translateY(0);
+}
+
+.button-secondary {
+    background: #6c757d;
+    margin-top: 20px;
+}
+
+.button-secondary:hover {
+    background: #5a6268;
+}
+
+/* Estilos específicos para el botón de sobregiro */
+#sobregiro {
+    background: #28a745; /* Color verde para distinguirlo */
+    width: 100%;
+    margin-top: 15px;
+}
+
+#sobregiro:hover {
+    background: #218838;
+}
+
+/* Estilos para el formulario de actualización de datos */
+#actualizarDatosForm {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+#actualizarDatosForm input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#actualizarDatosForm button {
+    background: #1e3c72;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#actualizarDatosForm button:hover {
+    background: #2a5298;
+}
+
+/* Estilos para la sección de movimientos */
+#movimientosContainer {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+#listaMovimientos {
+    list-style-type: none;
+    padding: 0;
+}
+
+#listaMovimientos li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#listaMovimientos li:last-child {
+    border-bottom: none;
+}
+
+/* Clase para ocultar elementos */
+.hidden {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .button-container {
+        grid-template-columns: 1fr;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .nav-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-buttons button {
+        width: 100%;
+    }
+}

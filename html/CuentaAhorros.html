@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cajero Automático - Cuenta de Ahorros</title>
+    <link rel="stylesheet" href="../css/cuentas.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Cajero Automático - Cuenta de Ahorros</h2>
+        <div class="user-info">
+            <div id="saldoActual">Saldo: $0</div>
+            <div id="numeroCuenta">Número de cuenta: </div>
+            <div id="titularCuenta">Titular: </div>
+        </div>
+        
+        <div class="button-container">
+            
+            <button class="button" id="consultar">Consultar Saldo</button>
+            <button class="button" id="retirar">Retirar</button>
+            <button class="button" id="deposito">Depositar</button>
+            <button class="button" id="transfer">Transferir</button>
+            <button class="button" id="verMovimientos">Ver Movimientos</button>
+            <button class="button" id="actualizarDatos">Actualizar Datos</button>
+            
+        </div>
+
+        <!-- Sección de Movimientos -->
+        <div id="movimientosContainer" class="hidden">
+            <h3>Últimos Movimientos</h3>
+            <div id="listaMovimientos"></div>
+        </div>
+
+        <!-- Sección de Actualización de Datos -->
+        <div id="actualizarDatosForm" class="hidden">
+            <h3>Actualizar Datos Personales</h3>
+            <form id="formActualizarDatos" autocomplete="off">
+                <div class="form-group">
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" id="direccion" name="direccion">
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <button type="submit" class="button">Guardar Cambios</button>
+            </form>
+        </div>
+
+
+        <!-- Botones de navegación -->
+        <div class="nav-buttons">
+            <button class="button button-secondary" id="volverInicio">Volver al Inicio</button>
+            <button class="button button-secondary" onclick="window.location.href='../index.html'">Cerrar Sesión</button>
+        </div>
+    </div>
+
+    <script type="module" src="../js/cuentas.js"></script>
+</body>
+</html>
